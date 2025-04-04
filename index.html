@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor Challenge| Rock, Paper, Scissors</title>
- 
-</head>
-<body>
-
-  <main>
-    <section>
-      <h1>Rock, paper, scissors</h1>
-      <div>
-        <p>Score</p>
-        <p id="scoreDisplay">0</p>
-      </div>
-    </section>
-    <section>
-      <button class="user-input" value="rock">Rock</button>
-      <button class="user-input" value="paper">Paper</button>
-      <button class="user-input" value="scissors">Scissors</button>
-    </section>
-    <section id="displayResults">
-      <div class="row">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Frontend Mentor Challenge| Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Rock, paper, scissors</h1>
+        <div class="scoreContainer">
+          <p>Score</p>
+          <p id="scoreDisplay">0</p>
+        </div>
+      </header>
+      <section class="optionsContainer">
+        <button class="user-input paper" value="paper">Paper</button>
+        <button class="user-input scissors" value="scissors">Scissors</button>
+        <button class="user-input rock" value="rock">Rock</button>
+      </section>
+      <section id="displayResults" class="hide">
         <div>
           <p>YOU PICKED</p>
-          <img src="" alt="" id="userChoiceImg">
+          <div class="user-input">
+            <img src="" alt="" id="userChoiceImg" />
+          </div>
         </div>
         <div id="displayResultsText"></div>
         <div>
           <p>THE HOUSE PICKED</p>
-          <img src="" alt="" id="computerChoiceImg">
+          <div class="user-input">
+            <img src="" alt="" id="computerChoiceImg" />
+          </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <button>Rules</button>
-      <div id="rules-container">
-        <h2>RULES</h2>
-      </div>
-    </section>
-  </main>
-
-
-</body>
-<script src="assets/js/functions.js"></script>
+      </section>
+      <section>
+        <button id="showRules" class="btn-outline rules">Rules</button>
+        <div id="rulesContainer">
+          <h2>RULES</h2>
+          <img src="assets/images/icon-close.svg" id="close" alt="" />
+          <img src="assets/images/image-rules.svg" alt="" />
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="assets/js/functions.js"></script>
 </html>

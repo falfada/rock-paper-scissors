@@ -7,12 +7,6 @@ const winningRules = {
   scissors: "paper",
 };
 
-const itemsImage = {
-  rock: "assets/images/icon-rock.svg",
-  paper: "assets/images/icon-paper.svg",
-  scissors: "assets/images/icon-scissors.svg",
-};
-
 if (localStorage.getItem("score") === null) {
   localStorage.setItem("score", 0);
 }
@@ -34,14 +28,18 @@ function updateScore(isWin) {
 }
 for (const userChoice of userInput) {
   userChoice.addEventListener("click", async function () {
+    document.querySelector(".optionsContainer").classList.add("hide");
+    document.querySelector("#displayResults").classList.remove("hide");
     let userChoiceValue = userChoice.value;
-    document.getElementById("userChoiceImg").src = itemsImage[userChoiceValue];
+    let userChoiceImg = document.getElementById("userChoiceImg");
+    userChoiceImg.parentElement.classList.add(userChoiceValue);
 
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     let computerChoice = options[Math.floor(Math.random() * options.length)];
-    document.getElementById("computerChoiceImg").src =
-      itemsImage[computerChoice];
+    let computerChoiceImg = document.getElementById("computerChoiceImg");
+    computerChoiceImg.parentElement.classList.add(computerChoice);
 
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     let resultsMessage = document.createElement("p");
     displayResultsText.appendChild(resultsMessage);
 
@@ -64,6 +62,18 @@ for (const userChoice of userInput) {
 
     refreshButton.addEventListener("click", function () {
       location.reload();
+      document.querySelector(".optionsContainer").classList.remove("hide");
+      document.querySelector("#displayResults").classList.add("hide");
     });
   });
 }
+
+const showRulesButton = document.getElementById("showRules");
+showRulesButton.addEventListener("click", function () {
+  document.getElementById("rulesContainer").classList.add("show");
+});
+
+const closeRulesIcon = document.getElementById("close");
+closeRulesIcon.addEventListener("click", function () {
+  document.getElementById("rulesContainer").classList.remove("show");
+});
