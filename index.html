@@ -16,7 +16,7 @@
       <h1>Rock, paper, scissors</h1>
       <div>
         <p>Score</p>
-        <p>1</p>
+        <p id="scoreDisplay">0</p>
       </div>
     </section>
     <section>
@@ -24,8 +24,24 @@
       <button class="user-input" value="paper">Paper</button>
       <button class="user-input" value="scissors">Scissors</button>
     </section>
+    <section id="displayResults">
+      <div class="row">
+        <div>
+          <p>YOU PICKED</p>
+          <img src="" alt="" id="userChoiceImg">
+        </div>
+        <div id="displayResultsText"></div>
+        <div>
+          <p>THE HOUSE PICKED</p>
+          <img src="" alt="" id="computerChoiceImg">
+        </div>
+      </div>
+    </section>
     <section>
       <button>Rules</button>
+      <div id="rules-container">
+        <h2>RULES</h2>
+      </div>
     </section>
   </main>
 
