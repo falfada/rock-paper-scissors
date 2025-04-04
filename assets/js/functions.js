@@ -70,10 +70,10 @@ for (const userChoice of userInput) {
 
 const showRulesButton = document.getElementById("showRules");
 showRulesButton.addEventListener("click", function () {
-  document.getElementById("rulesContainer").classList.add("show");
+  document.querySelector(".rulesWrapper").classList.add("show");
 });
 
 const closeRulesIcon = document.getElementById("close");
 closeRulesIcon.addEventListener("click", function () {
-  document.getElementById("rulesContainer").classList.remove("show");
+  document.querySelector(".rulesWrapper").classList.remove("show");
 });

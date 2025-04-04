@@ -192,11 +192,48 @@ button#refreshButton {
   font-weight: 700;
 }
 
-#rulesContainer {
-  display: none;
+.rulesWrapper {
+  transition: all 0.3s ease;
 }
-#rulesContainer.show {
+.rulesWrapper.show {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rulesWrapper.show #rulesContainer {
+  width: 25%;
+  background: #FAFAFA;
+  border-radius: 8px;
+  padding: 1rem;
   display: block;
+}
+.rulesWrapper.show #rulesContainer .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rulesWrapper.show #rulesContainer .modal-header h2 {
+  color: #192444;
+}
+.rulesWrapper.show #rulesContainer .modal-header img {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+.rulesWrapper.show #rulesContainer .modal-body {
+  margin-top: 2rem;
+}
+.rulesWrapper.show #rulesContainer .modal-body img {
+  width: 100%;
+}
+.rulesWrapper #rulesContainer {
+  display: none;
 }
 
 .btn-outline {
