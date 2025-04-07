@@ -107,6 +107,18 @@ header.header .scoreContainer p#scoreDisplay {
   color: #58546B;
 }
 
+@media (max-width: 576px) {
+  header.header {
+    align-items: center;
+  }
+  header.header h1 {
+    width: 110px;
+    height: 70px;
+  }
+  header.header .scoreContainer {
+    padding: 0.5rem;
+  }
+}
 .optionsContainer {
   width: 70%;
   background: url("../images/bg-triangle.svg") center no-repeat;
@@ -147,6 +159,21 @@ header.header .scoreContainer p#scoreDisplay {
   background: #FAFAFA url("../images/icon-scissors.svg") center no-repeat;
 }
 
+@media (max-width: 576px) {
+  .optionsContainer {
+    width: 90%;
+    row-gap: 2rem;
+    background-size: 80% auto;
+  }
+  .user-input {
+    width: 8rem;
+    height: 8rem;
+  }
+  .user-input.scissors, .user-input.paper, .user-input.rock {
+    border-width: 1rem;
+    background-size: 40% auto;
+  }
+}
 #displayResults {
   display: flex;
   gap: 2rem;
@@ -192,6 +219,39 @@ button#refreshButton {
   font-weight: 700;
 }
 
+@media (max-width: 576px) {
+  #displayResults {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  #displayResults div {
+    width: calc(50% - 1rem);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #displayResults div#displayResultsText {
+    order: 1;
+    width: 100%;
+  }
+  #displayResults div#displayResultsText p {
+    order: 0;
+    font-size: 3rem;
+  }
+  #displayResults div p {
+    width: 100%;
+    order: 1;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+  #displayResults div .user-input {
+    width: 8rem;
+    height: 8rem;
+    margin-top: 0;
+  }
+  button#refreshButton {
+    margin: auto;
+  }
+}
 .rulesWrapper {
   transition: all 0.3s ease;
 }
@@ -250,4 +310,32 @@ button#refreshButton {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+}
+
+@media (max-width: 576px) {
+  .rulesWrapper.show #rulesContainer {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .rulesWrapper.show #rulesContainer .modal-header {
+    width: 100%;
+    justify-content: center;
+  }
+  .rulesWrapper.show #rulesContainer .modal-header img#close {
+    position: absolute;
+    bottom: 2rem;
+  }
+  .rulesWrapper.show #rulesContainer .modal-body {
+    width: 100%;
+    margin-top: 4rem;
+  }
+  .btn-outline.rules {
+    left: 50%;
+    right: initial;
+    transform: translateX(-50%);
+  }
 }/*# sourceMappingURL=style.css.map */
